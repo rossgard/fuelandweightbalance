@@ -1,0 +1,56 @@
+.container
+
+h1 LN-VYJ Cessna 180
+h4 Fuel And Weight Balance
+.well.span12
+    pane(heading="Hello World")
+    form.form-horizontal(ng-submit="calculate()" ng-controller="FuelAndWeightBalanceController")
+        div.control-group
+            label.control-label(for='emptyWeight') Empty weight
+            input(id="emptyWeight" type="text" ng-model="calc.emptyWeight" placeholder="Weight (kg)")
+
+        div.control-group
+            label.control-label Fuel
+            input(type="text" ng-model="calc.fuel" placeholder="Fuel (liter)")
+
+        div.control-group
+            label.control-label Oil
+            input(type="text" ng-model="calc.oil" placeholder="Oil (liter)")
+
+        div.control-group
+            label.control-label Pilot/CoPilot
+            input(type="text" ng-model="calc.pilotCoPilot" placeholder="Weight (kg)")
+
+        div.control-group
+            label.control-label Passenger
+            input(type="text" ng-model="calc.passenger" placeholder="Weight (kg)")
+
+        div.control-group
+            label.control-label Baggage hold
+            input(type="text" ng-model="calc.baggageHold" placeholder="Weight (kg)")
+
+        div.control-group
+            div.controls(ng-controller="myController")
+                button.btn.btn-primary(type="submit" ng-click="calculate()") Calculate
+
+    div.span-4
+    Moment empty weight {{calc.emptyWeight}}
+    Test      {{calc}}
+
+:javascript
+    function FuelAndWeightBalanceController($scope, $http) {
+      $scope.calc = {};
+      $scope.createUser = function() {
+        $http.post('/calculate', $scope.user);
+      }
+    }
+
+
+
+
+
+
+
+
+
+

@@ -3,7 +3,7 @@ var fwbApp = angular.module('fwbApp', []);
 var defaultSettings = {
     emptyWeight: 913,
     fuel: 100,
-    oil: 12,
+    oil: 11,
     pilotCoPilot: 80,
     passengers: 0,
     baggageHold: 5,
@@ -57,7 +57,7 @@ fwbApp.controller('FuelAndWeightBalanceController', function ($scope, $http) {
     $scope.totalWeight = function () {
         return $scope.calc.emptyWeight +
             ($scope.calc.fuel * 0.7) +
-            ($scope.calc.oil * 0.7) +
+            ($scope.calc.oil * 0.9) +
             $scope.calc.pilotCoPilot +
             $scope.calc.passengers +
             $scope.calc.baggageHold;
@@ -74,7 +74,7 @@ fwbApp.controller('FuelAndWeightBalanceController', function ($scope, $http) {
     $scope.totalMomentum = function () {
         return ($scope.calc.emptyWeight * $scope.settings.armEmptyWeight) +
             ($scope.calc.fuel * 0.7 * $scope.settings.armFuel) +
-            ($scope.calc.oil * 0.7 * $scope.settings.armOil) +
+            ($scope.calc.oil * 0.9 * $scope.settings.armOil) +
             ($scope.calc.pilotCoPilot * $scope.settings.armPilotCoPilot) +
             ($scope.calc.passengers * $scope.settings.armPassengers) +
             ($scope.calc.baggageHold * $scope.settings.armBaggageHold);

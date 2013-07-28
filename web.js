@@ -44,6 +44,6 @@ http.createServer(function (request, response) {
         }
     });
 
-}).listen(5000);
+}).listen(process.env.PORT || 5000);
 
 console.log('Server running at http://127.0.0.1:5000/');

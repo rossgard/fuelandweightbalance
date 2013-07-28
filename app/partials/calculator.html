@@ -1,0 +1,99 @@
+<div class="row-fluid">
+    <div class="span12">
+        <div class="well">
+            <h3>Fuel And Weight Balance LN-VYJ</h3>
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="emptyWeight">Empty weight</label>
+
+                    <div class="controls">
+                        <div class="input-append">
+                            <input id="emptyWeight" type="number" ng-model="calc.emptyWeight" disabled="true">
+                            <span class="add-on">kg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="fuel">Fuel</label>
+
+                    <div class="controls">
+                        <div class="input-append">
+                            <input id="fuel" ng-model="calc.fuel" type="number" min="0" max="250">
+                            <span class="add-on">liter</span>
+                        </div>
+                        <div class="input-append">
+                            <input id="fuelRange" type="range" ng-model="calc.fuel" min="0" max="250">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="oil" class="control-label">Oil</label>
+
+                    <div class="controls">
+                        <div class="input-append">
+                            <input id="oil" type="number" ng-model="calc.oil">
+                            <span class="add-on">liter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="pilotCoPilot" for="pilotCoPilot" class="control-label">Pilot/CoPilot</label>
+
+                    <div class="controls">
+                        <div class="input-append">
+                            <input id="pilotCoPilot" ng-model="calc.pilotCoPilot" type="number" min="0" max="250">
+                            <span class="add-on">kg</span>
+                        </div>
+                        <div class="input-append">
+                            <input id="pilotCoPilotRange" type="range" ng-model="calc.pilotCoPilot" min="0" max="250">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="passengers" class="control-label">Passenger</label>
+
+                    <div class="controls">
+                        <div class="input-append">
+                            <input id="passengers" ng-model="calc.passengers" type="number" min="0" max="250">
+                            <span class="add-on">kg</span>
+                        </div>
+                        <div class="input-append">
+                            <input id="passengersRange" type="range" ng-model="calc.passengers" min="0" max="250">
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="baggageHold" class="control-label">Baggage hold</label>
+
+                    <div class="controls">
+                        <div class="input-append">
+                            <input id="baggageHold" ng-model="calc.baggageHold" type="number" min="0" max="100">
+                            <span class="add-on">kg</span>
+                        </div>
+                        <div class="input-append">
+                            <input id="baggageHoldRange" type="range" ng-model="calc.baggageHold" min="0" max="100">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <pre>Total weight: <span style="{{totalWeightStyle()}}">{{ totalWeight() | number:1 }} kg </span>(max. {{ settings.maxTakeOffWeightNormal | number:1}} kg)</pre>
+        <pre>Total momentum: {{ totalMomentum() | number:1}}</pre>
+        <pre>Total momentum / total weight: {{ fwb() | number:1}}</pre>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span12">
+            <canvas id="fwbCanvas" width="700px" height="50px" class="fwb-canvas-phone"></canvas>
+        </div>
+    </div>
+</div>

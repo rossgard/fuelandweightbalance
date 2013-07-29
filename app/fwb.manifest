@@ -1,0 +1,21 @@
+CACHE MANIFEST 1
+# Version 1.0.0 2
+
+CACHE: 3
+index.html
+partials/calculator.html
+partials/settings.html
+partials/disclaimer.html
+css/bootstrap-responsive.min.css
+css/bootstrap.min.css
+css/fwb.css
+js/angular.min.js
+js/bootstrap.min.js
+js/fwb.js
+
+
+NETWORK: 4
+*
+
+#FALLBACK: 5
+#/app index.html

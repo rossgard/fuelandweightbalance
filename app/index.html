@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-ng-app="fwbApp">
+<html lang="en" data-ng-app="fwbApp" manifest="fwb.manifest">
 <head>
     <meta charset="utf-8">
     <title>LN-VYJ - Fuel And Balance Calculator</title>
@@ -12,13 +12,6 @@
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet" rel="stylesheet">
     <link href="css/fwb.css" rel="stylesheet" rel="stylesheet">
 
-
-    <!-- Fav and touch icons -->
-    <!--link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="../assets/ico/favicon.png"-->
 </head>
 
 <body>
@@ -51,6 +44,37 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/angular.min.js"></script>
 <script src="js/fwb.js"></script>
+
+<script type="text/ecmascript">
+    var cache = window.applicationCache;
+
+    cache.addEventListener("cached", function () {
+    console.log("All resources for this web app have now been downloaded. You can run this application while not connected to the internet");
+    }, false);
+    cache.addEventListener("checking", function () {
+    console.log("Checking manifest");
+    }, false);
+    cache.addEventListener("downloading", function () {
+    console.log("Starting download of cached files");
+    }, false);
+    cache.addEventListener("error", function (e) {
+    console.log("There was an error in the manifest, downloading cached files or you're offline: " + e);
+    }, false);
+    cache.addEventListener("noupdate", function () {
+    console.log("There was no update needed");
+    }, false);
+    cache.addEventListener("progress", function () {
+    console.log("Downloading cached files");
+    }, false);
+    cache.addEventListener("updateready", function () {
+    cache.swapCache();
+    console.log("Updated cache is ready");
+    // Even after swapping the cache the currently loaded page won't use it
+    // until it is reloaded, so force a reload so it is current.
+    window.location.reload(true);
+    console.log("Window reloaded");
+    }, false);
+</script>
 
 </body>
 </html>

@@ -18,8 +18,8 @@ http.createServer(function (request, response) {
         case '.css':
             contentType = 'text/css';
             break;
-        case '.jpeg':
-            contentType = 'image/jpeg';
+        case '.png':
+            contentType = 'image/png';
             break;
     }
 

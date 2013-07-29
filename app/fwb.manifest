@@ -1,8 +1,7 @@
 CACHE MANIFEST 1
-# Version 1.0.0 2
+# Version 1.0.1 2
 
 CACHE: 3
-index.html
 partials/calculator.html
 partials/settings.html
 partials/disclaimer.html
@@ -11,11 +10,7 @@ css/bootstrap.min.css
 css/fwb.css
 js/angular.min.js
 js/bootstrap.min.js
+js/jquery-1.9.1.min.js
 js/fwb.js
-
-
-NETWORK: 4
-
-
-#FALLBACK: 5
-#/app index.html
+img/glyphicons-halflings-white.png
+img/glyphicons-halflings.png

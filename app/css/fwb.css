@@ -1,25 +1,33 @@
 /* Large desktop */
-@media (min-width: 1200px) {
-
+@media (min-width: 979px) {
+    body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    }
 }
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
-
+    body {
+        padding-top: 0px; /* 60px to make the container go all the way to the bottom of the topbar */
+    }
 }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-
+    body {
+        padding-top: 00px; /* 60px to make the container go all the way to the bottom of the topbar */
+    }
 }
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
-
+    body {
+        padding-top: 0px; /* 60px to make the container go all the way to the bottom of the topbar */
+    }
 }
 
 body {
-    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+
 }
 
 input[type="number"] {
@@ -51,5 +59,5 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .fwb-canvas-phone {
-    width:100%;
+    width: 100%;
 }

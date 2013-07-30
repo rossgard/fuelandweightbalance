@@ -1,2 +1,2 @@
-Start container: container:start
-The application should now be available at http://localhost:8080/
+foreman start
+The application should now be available at http://localhost:5000/app/index.html

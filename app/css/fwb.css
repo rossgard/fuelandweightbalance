@@ -26,10 +26,6 @@
     }
 }
 
-body {
-
-}
-
 input[type="number"] {
     max-width: 67px;
 }
@@ -53,11 +49,6 @@ input[type='range']::-webkit-slider-thumb {
     width: 15px;
 }
 
-.fwb-box {
-    background-color: #ffd700;
-    max-width: 340px;
-}
-
-.fwb-canvas-phone {
+.fwb-canvas {
     width: 100%;
 }
